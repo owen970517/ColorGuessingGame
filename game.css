@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    font-family: 'Courier New', Courier, monospace;
+}
+body {
+    background: aquamarine;
+}
+h1 {
+    text-align: center;
+    background:lightcoral;
+    font-size: 50px;
+    color: #fff;
+}
+#rgbSpan {
+    font-size: 100px;
+}
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+}
+.line a {
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 30px;
+    color: lightcoral;
+    font-weight: 500;
+}
+.mainBox {
+    width: 600px;
+    margin: 0 auto;
+   
+
+}
+.box {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1.66%;
+    border-radius: 20px;
+    float: left;
+    background: #fff;
+}
