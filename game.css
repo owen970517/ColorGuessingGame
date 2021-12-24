@@ -44,3 +44,16 @@ h1 {
     float: left;
     background: #fff;
 }
+.playAgain:hover,.playBtn:hover,.easyBtn:hover,.hardBtn:hover {
+    padding: 10px;
+    background:lightcoral ;
+    color: #fff;
+    border-radius: 20px;
+}
+.playBtn.active,.easyBtn.active,.hardBtn.active{
+    padding: 10px;
+    background:lightcoral ;
+    color: #fff;
+    border-radius: 20px;
+}
+
