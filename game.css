@@ -39,7 +39,7 @@ h1 {
 .box {
     width: 30%;
     padding-bottom: 30%;
-    margin: 1.66%;
+    margin: 20px 10px;
     border-radius: 20px;
     float: left;
     background: #fff;
