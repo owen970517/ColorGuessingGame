@@ -3,6 +3,7 @@ let boxes = document.querySelectorAll('.box');
 const playBtn = document.querySelector('.playBtn');
 const easyBtn = document.querySelector('.easyBtn');
 const hardBtn = document.querySelector('.hardBtn');
+const newColor = document.querySelector('.playAgain');
 //const r = Math.floor(Math.random() * 255) + 1;
 //const g = Math.floor(Math.random() * 255) + 1;
 //const b = Math.floor(Math.random() * 255) + 1;
@@ -57,23 +58,31 @@ playBtn.addEventListener('click' , ()=> {
     }
 
 });
+newColor.addEventListener('click' , ()=> {
+    colors = generateRandomColor(boxCount);
+    pickedColor = colors[Math.floor(Math.random()*boxCount)];
+    getRGB.textContent = pickedColor;
+    document.querySelector('h1').style.background = pickedColor;
+    for (var i =0; i<boxes.length; i++) {
+        boxes[i].style.background = colors[i];
+    }
+})
 
-for(var i=0; i<colors.length; i++) {
-    boxes[i].style.background = colors[i];
+for(var i=0; i<boxes.length; i++) {
     boxes[i].addEventListener('click' , ()=> {
-        let selectedColor = this.style.background;
+        var selectedColor = this.style.background;
         if(selectedColor === pickedColor) {
             win();
         } else {
             lose(this);
         }
+        
     });
 }
 function win() {
     for(var i=0; i<colors.length; i++) {
         boxes[i].style.background = pickedColor;
     }
-    document.querySelector('h1').style.background = pickedColor;
     playBtn.innerHTML = "Correct!!!";
 }
 function lose(e) {
@@ -92,6 +101,6 @@ function randomColor() {
     const r = Math.floor(Math.random() * 255) + 1;
     const g = Math.floor(Math.random() * 255) + 1;
     const b = Math.floor(Math.random() * 255) + 1;
-    return `rgb(${r},${g},${b})`;
+    return `RGB(${r},${g},${b})`;
 
 }
