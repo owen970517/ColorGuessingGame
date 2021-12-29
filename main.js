@@ -68,10 +68,11 @@ newColor.addEventListener('click' , ()=> {
     }
 })
 
-for(var i=0; i<boxes.length; i++) {
-    boxes[i].addEventListener('click' , ()=> {
+for(var i=0; i<colors.length; i++) {
+    boxes[i].style.background = colors[i];
+    boxes[i].addEventListener('click' , function() {
         var selectedColor = this.style.background;
-        if(selectedColor === pickedColor) {
+        if(selectedColor === document.querySelector('h1').style.background) {
             win();
         } else {
             lose(this);
