@@ -59,6 +59,7 @@ playBtn.addEventListener('click' , ()=> {
 
 });
 newColor.addEventListener('click' , ()=> {
+    playBtn.textContent = "Playing..."
     colors = generateRandomColor(boxCount);
     pickedColor = colors[Math.floor(Math.random()*boxCount)];
     getRGB.textContent = pickedColor;
@@ -69,7 +70,6 @@ newColor.addEventListener('click' , ()=> {
 })
 
 for(var i=0; i<colors.length; i++) {
-    boxes[i].style.background = colors[i];
     boxes[i].addEventListener('click' , function() {
         var selectedColor = this.style.background;
         if(selectedColor === document.querySelector('h1').style.background) {
