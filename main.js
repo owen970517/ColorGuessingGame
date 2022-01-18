@@ -14,6 +14,7 @@ var boxCount = 6;
 
 
 easyBtn.addEventListener('click' , ()=> {
+    playBtn.classList.add('active');
     easyBtn.classList.toggle('active');
     hardBtn.classList.remove('active');
     playBtn.innerHTML="Playing easy"
@@ -31,8 +32,9 @@ easyBtn.addEventListener('click' , ()=> {
     document.querySelector('h1').style.background = chooseColor;
 })
 hardBtn.addEventListener('click' , ()=> {
+    playBtn.classList.add('active');
     hardBtn.classList.toggle('active');
-    easyBtn.classList.toggle('active');
+    easyBtn.classList.remove('active');
     playBtn.innerHTML="Playing Hard"
     boxCount=6;
     colors = generateRandomColor(boxCount);
@@ -59,7 +61,7 @@ playBtn.addEventListener('click' , ()=> {
 
 });
 newColor.addEventListener('click' , ()=> {
-    //playBtn.textContent = "Playing..."
+    playBtn.textContent = "Restart!"
     colors = generateRandomColor(boxCount);
     chooseColor = colors[Math.floor(Math.random()*boxCount)];
     getRGB.textContent = chooseColor;
