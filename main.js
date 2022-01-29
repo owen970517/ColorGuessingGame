@@ -47,7 +47,7 @@ hardBtn.addEventListener('click' , ()=> {
     getRGB.textContent = chooseColor;
     document.querySelector('h1').style.background = chooseColor;
 });
-
+// 플레이 버튼을 클릭 했을 때
 playBtn.addEventListener('click' , ()=> {
     playBtn.textContent = "Playing...";
     playBtn.classList.toggle('active');
@@ -60,6 +60,7 @@ playBtn.addEventListener('click' , ()=> {
     }
 
 });
+// 새로운 컬러를 만들고 싶을 때 
 newColor.addEventListener('click' , ()=> {
     playBtn.textContent = "Restart!"
     colors = generateRandomColor(boxCount);
@@ -70,7 +71,7 @@ newColor.addEventListener('click' , ()=> {
         boxes[i].style.background = colors[i];
     }
 })
-
+// 모든 박스들에게 클릭 이벤트를 주고 클릭한 값과 제시한 값이 같은지 비교 후 정답 유무 함수 실행
 for(var i=0; i<colors.length; i++) {
     boxes[i].addEventListener('click' , function() {
         var selectedColor = this.style.background;
@@ -82,17 +83,19 @@ for(var i=0; i<colors.length; i++) {
         
     });
 }
+// 답을 맞췄으면 전체 의 박스를 정답과 같은 색상으로 바꿔준다.
 function correct() {
     for(var i=0; i<colors.length; i++) {
         boxes[i].style.background = chooseColor;
     }
     playBtn.innerHTML = "Correct!!!";
 }
+// 잘못된 색상을 클릭 했을 경우 클릭한 부분의 배경색을 전체 배경색과 똑같이 바꿔줌으로서 없어진 것 처럼 한다.
 function wrong(e) {
     e.style.background = "aquamarine";
     playBtn.innerHTML = "Try Again!!!";
 }
-
+// 배열을 생성하고 생성하고 싶은 색상의 개수를 파라미터로 받아오고 반복문을 돌릴 때 마다 배열에 넣는다 
 function generateRandomColor(num) {
     var arr = [];
     for(var i=0; i<num; i++) {
@@ -100,6 +103,7 @@ function generateRandomColor(num) {
     }
     return arr;
 }
+//  0~255 사이의 랜덤한 값을 정해서 r,g,b 의 값에 넣어서 색상을 생성 
 function randomColor() {
     const r = Math.floor(Math.random() * 255) + 1;
     const g = Math.floor(Math.random() * 255) + 1;
